@@ -54,15 +54,12 @@ body{
     background-color: black;
 }
 
-.main{
-    height: 70vh;
-}
-
 .option{
     display: flex;
     height: 65%;
     width: 20%;
     background-color:#2f3640;
+    margin-right: 4rem;
   
    
 }
@@ -74,11 +71,61 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    
 }
 
 .icon{
     color: white;
     font-size: 1.75rem;
+}
+
+/* ****************MAIN******************* */
+
+.main{
+    min-height: 89vh;
+    background-color: rgb(241, 234, 234);
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+
+.ticket{
+    height: 10rem;
+    width: 16rem;
+    /* margin-top: 10rem;
+    margin-left: 10rem; */
+   }
+
+.ticket_header{
+    height: 6%;
+    /* background-color: black */
+}
+
+.ticket_content{
+    height: 94%;
+}
+
+.ticket_id{
+    height: 20%;
+    font-weight: bolder;
+    background-color: white;    
+    font-family: sans-serif;
+    color: #989393;
+    padding-top: 0.4rem;
+    padding-left: 1rem;
+}
+
+textarea{
+    height: 80%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    line-height: 145%;
+    text-align: center;
+    /* background-color: aqua; */
+
 }
