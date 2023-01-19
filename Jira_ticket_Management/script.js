@@ -9,21 +9,71 @@ addBtn.addEventListener("click",function(){
        return;
     }
   
-    createTcket();
+    handleCreation();
  })
 
+ function handleCreation(){
+   isdelete=false;
+
+   let id = uuidv4();
+
+   //logic creatin the box
+   createModal(id);
+ }
+
+ function createModal(id){
+   let cColor="black";
+   let modal=document.createElement("div");
+   modal.setAttribute("class","modal");
+   modal.innerHTML=`
+ <textarea class="content_area"
+  placeholder="Enter some Task"></textarea>
+<div class="pallet_container">
+   <div class="pallet_color pink"></div>
+   <div class="pallet_color blue"></div>
+   <div class="pallet_color green"></div>
+   <div class="pallet_color black"></div>
+</div>`
+    main.appendChild(modal);
+
+    //get color
+    let allColors=modal.querySelectorAll(".pallet_color");
+    for(let i=0;i<allColors.length;i++){
+      allColors[i].addEventListener("click",function(e){
+         cColor=allColors[i].classList[1];
+      })
+    }
+
+    //get text after pressing enter
+    modal.addEventListener("keypress",function(e){
+
+      let key=e.key;
+      if(key=="Enter"){
+      let textarea=modal.querySelector("textarea");
+      let text=textarea.value;
+      //destory modal
+      modal.remove();
+      //return text and color
+      createTcket(id,cColor,text);
+      }
+    })
+
+
+ }
+
  //ticket creation
- function createTcket(){
-    let id = uuidv4()
+ function createTcket(id,color,text){
+    
+  
  // main-> add ticket
  let ticket=document.createElement("div");
  ticket.setAttribute("class","ticket");
- ticket.innerHTML=`<div class="ticket_header black"></div>
+ ticket.innerHTML=`<div class="ticket_header ${color}"></div>
  <div class="ticket_content">
      <div class="ticket_id">
         #${id}
      </div>
-    <textarea name="" id="" cols="30"  rows="10"></textarea>
+    <textarea name="">${text}</textarea>
  </div>`
     main.appendChild(ticket);
  

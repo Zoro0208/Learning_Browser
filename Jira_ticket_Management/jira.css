@@ -133,3 +133,42 @@ textarea{
 .clicked{
     background-color: rgb(84, 84, 84);
 }
+
+/* **********************MODAL*********** */
+
+.modal{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    height: 18rem;
+    width:35rem ;
+    position: fixed;
+    top: 10rem;
+    /* to center vetically */
+    left: calc((100vw- 35rem))/2;
+    background: white;
+    display: flex;
+    
+}
+
+.content_area{
+    width: 70%;
+    height: 100%;
+    font-size: 2rem;
+    padding: 2rem;
+}
+.pallet_container{
+    height: 100%;
+    width: 30%;
+    background-color: rgb(56, 54, 54);
+    display: flex;
+    /* horizontal center */
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.pallet_color{
+  
+    height: 15%;
+    width: 60%;
+ 
+}
