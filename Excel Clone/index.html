@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Excel Clone</title>
+    <link rel="stylesheet" href="excel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <div class="menu_bar">
+
+        <select name="" class="select_f_family">
+            <option value="Courier New">Courier New</option>
+            <option value="Franklin Gothic Medium" selected>Franklin Gothic Medium</option>
+            <option value="Trebuchet MS">Trebuchet MS</option>
+            <option value="Georgia">Georgia</option>
+        </select>
+
+        <select name="" class="select_f_size">  
+            <option value="12">small</option>
+            <option value="16" selected>medium</option>
+            <option value="18">large</option>
+            <option value="20">xl</option>
+        </select>
+
+        <div class="bui_container">
+            <i class="fas fa-bold "></i>
+            <i class="fas fa-underline "></i>
+            <i class="fas fa-italic"></i>
+        </div>
+
+        <div class="alignment_container">
+            <i class="fas fa-align-left left"></i>
+            <i class="fas fa-align-center center"></i>
+            <i class="fas fa-align-justify justify"></i>
+            <i class="fas fa-align-right right"></i>
+        </div>
+    </div>
+
+
+    <div class="formula_container">
+        <input type="text" class="address_bar" value="A1" readonly>
+        <img src="formula2.png" alt="formula img" class="formula_img">
+        <input type="text" class="formula_bar" placeholder="formula">
+    </div>
+
+    <div class="grid_container">
+        <div class="tl_cell"></div>
+        <div class="top_row"></div>
+        <div class="left_col"></div>
+        <div class="grid">
+            <!-- <div class="cell"></div> -->
+        </div>
+    </div>
+
+    <div class="sheet_container">
+        <div class="add_sheet">
+            <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="sheet" myid="1">Sheet 1</div>
+    </div>
+    <script src="init.js"></script>
+    <script src="menu_bar.js"></script>
+    <script src="script.js"></script>
+    <script src="formula.js"></script>
+</body>
+</html>

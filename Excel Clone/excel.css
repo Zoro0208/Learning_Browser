@@ -1,0 +1,171 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+}
+
+/********************* menu BAr*********** */
+.menu_bar{
+    height: 3rem;
+    border: 1px solid grey;
+    /* background-color: lightcoral; */
+    display: flex;
+    align-items: center;
+   
+} 
+
+.menu_bar>*{
+    height: 75%;
+}
+
+.select_f_family{
+    width: 20%;
+    border: none;
+  border-right: 1px solid grey;
+  text-align: center;
+}
+
+.select_f_size{
+    width: 10%;
+    border: none;
+  border-right: 1px solid grey;
+  text-align: center;
+
+}
+
+.bui_container,.alignment_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 20%;
+    border-right: 1px solid grey;
+    color: grey;
+}
+
+.active{
+    color:black;
+}
+
+
+/* ************formula Container******* */
+.formula_container{
+    height: 2rem;
+    border: 1px solid grey;
+    /* background-color: lightskyblue; */
+    display: flex;
+     align-items: center; 
+}
+
+.formula_img{
+    height: 1.5rem;
+     
+}
+
+.address_bar{
+      width: 20%;
+      text-align: center;
+      border: none;
+      border-right: 1px solid gray;
+      margin-right: 1rem;
+      outline: none;
+    
+}
+
+.formula_bar{
+    width: 70%;
+    border: none;
+    border-left: 1px solid grey;
+    margin-left: 0.5rem;
+    outline: none;
+}
+
+
+
+
+/* ******************grid starts******************************* */
+.grid_container{
+    /* border: 1px solid grey; */
+    height:calc(100vh
+    - 7rem);
+    overflow: auto;
+    position: relative;
+    /* background-color: lightslategray; */
+}
+
+.cell{
+    border: 0.5px solid gray;
+    height: 1.5rem;
+    width: 5rem;
+    /* background-color: coral; */
+}
+
+.left_col>*{
+    text-align: center;
+    width: 2rem;
+    padding-top: 0.2rem; 
+}
+
+.top_row{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 2rem;
+}
+
+.left_col{
+    position: absolute;
+    top: 1.4rem;
+    
+}
+
+.grid{
+    position: absolute;
+    left: 2.01rem;
+}
+
+.top_row>.cell,.row>.cell{
+    min-width: 5rem;  
+    text-align: center;
+    padding-top: 0.2rem; 
+}
+
+.tl_cell{
+    height: 1.4rem;
+    width: 2rem;
+    border-right: 5px solid lightgray;
+    border-bottom: 5px solid lightgray;
+}
+
+.row{
+    display: flex;
+}
+
+
+
+/********************** Sheet container*********** */
+.sheet_container{
+    height: 2rem;  
+    display: flex;
+}
+
+.add_sheet{
+   height: 2rem;
+   width: 2rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    border: 2px solid grey; 
+}
+
+.sheet{
+    height: 2rem;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+     border: 1px solid grey; 
+     /* padding-top: 0.2rem; */
+}
+
