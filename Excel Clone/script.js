@@ -48,11 +48,17 @@ function setMenuBar(rid,cid){
         underlineBtn.classList.remove("selected");
     }
 
-    //font size
+    // font size
     selectFontSIze.value=cellObj.fontSize;
+    console.log(cellObj.fontSize)
 
     //font family
-    selectFontStyle.value=cellObj.fontFamily;
+    console.log(cellObj.fontFamily);
+    selectFontFamily.value=cellObj.fontFamily;
+
+    //unknown errer herre oif remove below line webpge wont respond
+    h.value=cellObj.fontFamily;
+
 
     for(let i=0;i<alignmentBtn.length;j++){
         alignmentBtn[i].classList.remove("selected");

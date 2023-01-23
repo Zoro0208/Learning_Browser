@@ -52,7 +52,7 @@ function initDb(){
         let rowArr=[];
         for(let j=0;j<26;j++){
             let cellObj={
-                fontFamily:"Courier New",
+                fontFamily:"Arial",
                 fontSize:"16",
                 isBold:false,
                 isItalic:false,
@@ -66,6 +66,7 @@ function initDb(){
         db.push(rowArr);
     }
 }
+
 
      
 init();

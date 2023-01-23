@@ -1,5 +1,6 @@
 //font Size
 let selectFontSIze=document.querySelector(".select_f_size");
+console.log(selectFontSIze.value);
 selectFontSIze.addEventListener("change",function(){
     let fontSizee=selectFontSIze.value;
     
@@ -20,18 +21,19 @@ selectFontSIze.addEventListener("change",function(){
 })
 
 // font style
-// let selectFontStyle=document.querySelector(".select_f_family")
-// selectFontStyle.addEventListener("change",function(){
+const selectFontFamily =document.querySelector(".select_f_family");
+console.log(selectFontFamily);
+selectFontFamily.addEventListener("change",function(){
 
-//     let fontstylee=selectFontStyle.value;
-//     let {rid,cid}= getRidCidFromAddressBar();
-//     let dbCellObj=db[rid][cid];
-//     // let cellToBeChanged=getcell();
-//     let cellToBeChanged=document.querySelector(`.grid .cell[rid="${rid}"][cid="${cid}"]`);
+    let fontstylee=selectFontFamily.value;
+    let {rid,cid}= getRidCidFromAddressBar();
+    let dbCellObj=db[rid][cid];
+    // let cellToBeChanged=getcell();
+    let cellToBeChanged=document.querySelector(`.grid .cell[rid="${rid}"][cid="${cid}"]`);
    
-//     cellToBeChanged.style.fontFamily=fontstylee;
-//     dbCellObj.fontSize=fontstylee;
-// })
+    cellToBeChanged.style.fontFamily=fontstylee;
+    dbCellObj.fontFamily=fontstylee;
+})
 
 
 
@@ -109,7 +111,7 @@ underlineBtn.addEventListener("click",function(){
 
 
 //allignment ka code
-let alignmentBtn=document.querySelectorAll(".alignment_container i ")
+let alignmentBtn=document.querySelectorAll(".alignment_container i ");
 
 
 for(let i=0;i<alignmentBtn.length;i++){
@@ -168,3 +170,4 @@ function convertAddressToRidCid(address){
     return {"rid":rid,
             "cid":cid};
 }
+
