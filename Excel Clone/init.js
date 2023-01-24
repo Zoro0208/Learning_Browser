@@ -1,5 +1,5 @@
 
-function init(){
+function initUI(){
 
     let topRow=document.querySelector(".top_row")
    let leftCol=document.querySelector(".left_col")
@@ -40,18 +40,50 @@ for(let i=0;i<100;i++){
     grid.appendChild(row);
 }
 }
+initUI();
+
+
+let sheets=[]
+//create 2D db->>>to represent every cell in the grid and push it into sheets wala array to make it 3d array
+function initDbTosheet(){
+    let newDb=[];
+    for(let i=0;i<100;i++){
+        let rowArr=[];
+        for(let j=0;j<26;j++){
+            let cellObj={
+                fontFamily:"Arial",
+                fontSize:"16",
+                isBold:false,
+                isItalic:false,
+                isUnderline:false,
+                cAlignment:"justify",
+                formula:" ",
+                value:" ",
+                children:[]
+            }
+            rowArr.push(cellObj)
+        }
+        newDb.push(rowArr);
+    }
+    sheets.push(newDb);
+}
+
+
+initDbTosheet();
+let db=sheets[0];
+
+//first cell will be selected automatically
+let firstCell=document.querySelector(`.grid .cell[rid="${0}"][cid="${0}"]`);
+firstCell.click();
 
 //sheet logic
-
-//first sheet
+//first sheet color change
 let firstSheet=document.querySelector(".sheet");
 firstSheet.addEventListener("click",changeSheet);
 
-//new sheet
+//new sheet to be crteated
 let addBtn=document.querySelector(".add_sheet");
 let sheetSubContainer=document.querySelector(".sheet_sub");
-
-
 
 addBtn.addEventListener("click",function(){
     //get allsheets
@@ -65,6 +97,8 @@ addBtn.addEventListener("click",function(){
      newSheet.setAttribute("myId",`${newid}`);
      newSheet.innerText=`Sheet ${newid+1}`;
      sheetSubContainer.appendChild(newSheet);
+
+     initDbTosheet();
      newSheet.addEventListener("click",changeSheet)
 })
 
@@ -76,36 +110,36 @@ function changeSheet(e){
     }
     //set current sheet on ui
     newSheet.classList.add("cur_sheet");
+    let CurrSheetIdx=newSheet.getAttribute("myId");
+    db=sheets[CurrSheetIdx];
+    setUI(db);
 }
 
 
+function setUI(db){
+    for(let rid=0;rid<100;rid++){
+        
+        for(let cid=0;cid<26;cid++){
+           let cellObj=db[rid][cid];
+           let uiCell=document.querySelector(`.grid .cell[rid="${rid}"][cid="${cid}"]`);
 
-//create 2D db->>>to represent every cell in the grid
+           uiCell.style.fontFamily=cellObj.fontFamily;
 
-let db=[];
+           uiCell.style.fontSize=cellObj.fontSize +"px";
 
-function initDb(){
-    for(let i=0;i<100;i++){
-        let rowArr=[];
-        for(let j=0;j<26;j++){
-            let cellObj={
-                fontFamily:"Arial",
-                fontSize:"16",
-                isBold:false,
-                isItalic:false,
-                isUnderline:false,
-                cAlignment:"justify",
-                formula:" ",
-                value:" "
-            }
-            rowArr.push(cellObj)
+           uiCell.style.fontWeight=cellObj.isBold==true?"bold":"normal";
+
+           uiCell.style.fontStyle=cellObj.isItalic==true?"italic":"normal";
+
+           uiCell.style.textDecoration=cellObj.isUnderline==true?"underline":"none";
+
+           uiCell.style.textAlign=cellObj.cAlignment;
+           uiCell.textContent=cellObj.value;
         }
-        db.push(rowArr);
-    }
+     }
+   let firstCell=document.querySelector(`.grid .cell[rid="${0}"][cid="${0}"]`);
+   firstCell.click();
 }
 
 
-     
-init();
 
-initDb();

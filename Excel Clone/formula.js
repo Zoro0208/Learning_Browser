@@ -14,13 +14,13 @@ const formulaBar=document.querySelector(".formula_bar");
         if(e.key=="Enter"&&formulaBar.value!=""){
              // console.log(e.key);
          formula=formulaBar.value;
-         let cCell=addressBarVal.value;
+        //  let cCell=addressBarVal.value;
          let {rid,cid}=getRidCidFromAddressBar();
-         let dbCell=db[rid][cid];
-         let oldFormula=dbCell.formula;
-         if(oldFormula==formula){
-            return;
-         }
+        //  let dbCell=db[rid][cid];
+        //  let oldFormula=dbCell.formula;
+        //  if(oldFormula==formula){
+        //     return;
+        //  }
 
         //  if(oldFormula!=""){
         //     removeFormula(dbCell,cCell)
@@ -28,7 +28,7 @@ const formulaBar=document.querySelector(".formula_bar");
         //  console.log(formula);
          let ans=evaluate(formula);
         //  console.log(ans)
-         setUI(ans,rid,cid);
+         setUi(ans,rid,cid);
          setFormulaInDb(formula,rid,cid,ans);
 
         }
@@ -71,7 +71,7 @@ const formulaBar=document.querySelector(".formula_bar");
         return ans;
     }
 
-    function setUI(ans,rid,cid){
+    function setUi(ans,rid,cid){
         let cell=document.querySelector(`.grid .cell[rid="${rid}"][cid="${cid}"]`);
         cell.innerText=ans;
 

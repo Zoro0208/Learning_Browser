@@ -2,7 +2,7 @@
 let selectFontSIze=document.querySelector(".select_f_size");
 console.log(selectFontSIze.value);
 selectFontSIze.addEventListener("change",function(){
-    let fontSizee=selectFontSIze.value;
+    let fontSize=selectFontSIze.value;
     
 // console.log(fontSizee)
 
@@ -16,8 +16,8 @@ selectFontSIze.addEventListener("change",function(){
 //    console.log(rid +"" +cid);
 
    //setv font style or size
-   cell.style.fontSize = fontSizee + "px";
-   dbCellObj.fontSize=fontSizee;
+   cell.style.fontSize = fontSize + "px";
+   dbCellObj.fontSize=fontSize;
 })
 
 // font style
@@ -25,14 +25,14 @@ const selectFontFamily =document.querySelector(".select_f_family");
 console.log(selectFontFamily);
 selectFontFamily.addEventListener("change",function(){
 
-    let fontstylee=selectFontFamily.value;
+    let fontStyle=selectFontFamily.value;
     let {rid,cid}= getRidCidFromAddressBar();
     let dbCellObj=db[rid][cid];
     // let cellToBeChanged=getcell();
     let cellToBeChanged=document.querySelector(`.grid .cell[rid="${rid}"][cid="${cid}"]`);
    
-    cellToBeChanged.style.fontFamily=fontstylee;
-    dbCellObj.fontFamily=fontstylee;
+    cellToBeChanged.style.fontFamily=fontStyle;
+    dbCellObj.fontFamily=fontStyle;
 })
 
 
