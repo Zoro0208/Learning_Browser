@@ -50,7 +50,7 @@ function setMenuBar(rid,cid){
 
     // font size
     selectFontSIze.value=cellObj.fontSize;
-    console.log(cellObj.fontSize)
+    //  
 
     //font family
     console.log(cellObj.fontFamily);
@@ -73,6 +73,10 @@ function setMenuBar(rid,cid){
 
         }
     }
+
+    //set formula
+    let formula=cellObj.formula;
+    formulaBar.value=formula;
 
 
 }

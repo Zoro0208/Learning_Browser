@@ -41,6 +41,43 @@ for(let i=0;i<100;i++){
 }
 }
 
+//sheet logic
+
+//first sheet
+let firstSheet=document.querySelector(".sheet");
+firstSheet.addEventListener("click",changeSheet);
+
+//new sheet
+let addBtn=document.querySelector(".add_sheet");
+let sheetSubContainer=document.querySelector(".sheet_sub");
+
+
+
+addBtn.addEventListener("click",function(){
+    //get allsheets
+    let allSheets=document.querySelectorAll(".sheet");
+    //last sheet
+    let lastSheet=allSheets[allSheets.length - 1];
+    let myId=lastSheet.getAttribute("myId");
+    let newid=Number(myId)+1;
+    let newSheet=document.createElement("div");
+     newSheet.setAttribute("class","sheet");
+     newSheet.setAttribute("myId",`${newid}`);
+     newSheet.innerText=`Sheet ${newid+1}`;
+     sheetSubContainer.appendChild(newSheet);
+     newSheet.addEventListener("click",changeSheet)
+})
+
+function changeSheet(e){
+    let newSheet=e.currentTarget;
+    let allSheets=document.querySelectorAll(".sheet");
+    for(let i=0;i<allSheets.length;i++){
+        allSheets[i].classList.remove("cur_sheet");
+    }
+    //set current sheet on ui
+    newSheet.classList.add("cur_sheet");
+}
+
 
 
 //create 2D db->>>to represent every cell in the grid
@@ -58,8 +95,8 @@ function initDb(){
                 isItalic:false,
                 isUnderline:false,
                 cAlignment:"justify",
-                formula:"",
-                value:""
+                formula:" ",
+                value:" "
             }
             rowArr.push(cellObj)
         }

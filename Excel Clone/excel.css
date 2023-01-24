@@ -160,6 +160,7 @@ body{
 }
 
 .sheet{
+    background-color: lightgray;
     height: 2rem;
     width: 4rem;
     display: flex;
@@ -169,3 +170,11 @@ body{
      /* padding-top: 0.2rem; */
 }
 
+.cur_sheet{
+    background-color: white;
+}
+
+.sheet_sub{
+    display: flex;
+    
+}
